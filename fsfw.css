@@ -206,6 +206,86 @@ dl dd {
     font-size: 120%;
 }
 
+/********** special rules for index.html **********/
+
+/* the .imagebannerlinks container produces a 3-column layout on large screens */
+@media(min-width: 701px) {
+
+    #content-container > section > .imagebannerlinks {
+        margin: 1rem 0;
+        padding: 0 0.5rem;
+        display: table;
+        width: 100%;
+        box-sizing: padding-box;
+    }
+
+    #content-container > section > .imagebannerlinks ul {
+        list-style: none;
+        display: table-row;
+    }
+
+    #content-container > section > .imagebannerlinks ul li {
+        display: table-cell;
+        padding: 0 0.5rem;
+        width: 33.33%;
+    }
+}
+
+#content-container > section > .imagebannerlinks ul li a {
+    display: block;
+    border-radius: 5px;
+    color: white !important;
+    text-decoration: none !important;
+    box-shadow: 0 0 5px #CCC;
+}
+
+#content-container > section > .imagebannerlinks ul li a b {
+    padding: 0 0.5rem;
+    line-height: 2.2rem;
+    font-size: 1.5rem;
+}
+
+#content-container > section > .imagebannerlinks ul li a span {
+    display: block;
+    width: 100%;
+    height: 180px;
+    background-position: center;
+    background-size: cover;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.imagebannerlinks li.turquoise a {
+    background-color: #28ADB8;
+}
+.imagebannerlinks li.violet a {
+    background-color: #654BC7;
+}
+.imagebannerlinks li.green a {
+    background-color: #6BBB00;
+}
+
+/* on small screens, we switch from 3-column to 1-column layout, but we keep
+ * the margin around the topic images because this is content, not a header (it
+ * needs to be visually distinct from the header image below it) */
+
+@media(max-width: 700px) {
+    #content-container > section > .imagebannerlinks {
+        display: block;
+    }
+
+    #content-container > section > .imagebannerlinks ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    #content-container > section > .imagebannerlinks ul li {
+        display: block;
+        margin: 1rem 0;
+    }
+}
+
 /********** special rules for themen.html **********/
 
 #content-container.nopadding {
